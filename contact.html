@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Exquisite Timepieces</title>
+    <style>
+        :root {
+            --dark-green: #0a3b2e;
+            --golden-brown: #b68d40;
+            --cream: #f0ead6;
+            --dark: #111111;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--cream);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--golden-brown);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--golden-brown);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--golden-brown);
+        }
+        
+        .page-title {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 48px;
+            font-weight: 300;
+            color: var(--golden-brown);
+            margin-bottom: 20px;
+        }
+        
+        .page-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h2 {
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--golden-brown);
+            margin-bottom: 20px;
+        }
+        
+        .contact-method {
+            margin-bottom: 30px;
+        }
+        
+        .contact-method h3 {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--golden-brown);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-method h3 i {
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        
+        .contact-method p {
+            font-size: 16px;
+            margin-left: 39px;
+        }
+        
+        .contact-form h2 {
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--golden-brown);
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(182, 141, 64, 0.3);
+            color: var(--cream);
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--golden-brown);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--golden-brown);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #9a7835;
+        }
+        
+        .map-section {
+            padding: 60px 0;
+        }
+        
+        .map-container {
+            height: 400px;
+            background-color: var(--dark-green);
+            position: relative;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .map-overlay h3 {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--golden-brown);
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--dark-green);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col {
+            flex: 1;
+        }
+        
+        .footer-col h4 {
+            color: var(--golden-brown);
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .footer-col p, .footer-col a {
+            color: var(--cream);
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-col a:hover {
+            color: var(--golden-brown);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .boutique-gallery {
+            margin: 60px 0;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--golden-brown);
+            margin-bottom: 30px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">EXQUISITE TIMEPIECES</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We invite you to experience our world of timeless elegance. Our team of horological experts is ready to assist you with any inquiries about our collection.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-method">
+                        <h3><i class="fas fa-map-marker-alt"></i> Visit Our Outlet</h3>
+                        <p>IIIT NAGPUR</p>
+                        <p>Hostel Block-A</p>
+                        <p>Monday - Saturday: 10am - 7pm</p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="fas fa-phone"></i> Call Us</h3>
+                        <p>+91 9238544338<br>
+                        +91 7988792818</p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="fas fa-envelope"></i> Email Us</h3>
+                        <p>contact@exquisitetimepieces.com</p>
+                        <p>For private appointments: vip@exquisitetimepieces.com</p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="fas fa-clock"></i> Service & Maintenance</h3>
+                        <p>Our in-house watchmakers are available for consultations and service inquiries.</p>
+                        <p>service@exquisitetimepieces.com</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm Interested In</label>
+                            <select id="interest" name="interest">
+                                <option value="rolex">Rolex</option>
+                                <option value="rado">Rado</option>
+                                <option value="patekphilippe">Patek Philippe</option>
+                                <option value="multiple">Multiple Brands</option>
+                                <option value="service">Service & Repair</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="boutique-gallery">
+        <div class="container">
+            <h2 class="gallery-title">Our Boutique</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Boutique Interior">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Watch Display">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="VIP Lounge">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-overlay">
+                <h3>Exquisite Timepieces Boutique</h3>
+                <p>123 Luxury Avenue, Beverly Hills, CA 90210</p>
+                <a href="#" class="btn" style="margin-top: 20px;">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>Exquisite Timepieces has been a trusted curator of luxury watches for over three decades, offering only the finest selection to our distinguished clientele.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit Us</h4>
+                    <p>123 Luxury Avenue</p>
+                    <p>Beverly Hills, CA 90210</p>
+                    <p>Mon-Sat: 10am - 7pm</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>+1 (800) 555-1234</p>
+                    <p>contact@exquisitetimepieces.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Exquisite Timepieces. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form validation and submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Basic validation
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (!name || !email || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    submitBtn.innerHTML = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate successful submission after 1.5 seconds
+                    setTimeout(function() {
+                        alert('Thank you for your message! Our team will contact you shortly.');
+                        contactForm.reset();
+                        submitBtn.innerHTML = 'Send Message';
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+            
+            // Add fade-in animation for elements
+            const fadeElements = document.querySelectorAll('.contact-method, .form-group, .gallery-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

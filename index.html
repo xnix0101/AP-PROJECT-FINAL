@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exquisite Timepieces | Luxury Watches</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="access/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">EXQUISITE TIMEPIECES</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Timeless Elegance. Unmatched Craftsmanship.</h1>
+                <p>Discover our exclusive collection of the world's most prestigious timepieces, meticulously curated for the discerning connoisseur.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title">Our Prestigious Brands</h2>
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <img src="access/images/rolex.webp" alt="Rolex Timepieces">
+                    <div class="brand-info">
+                        <h3>Rolex</h3>
+                        <p>The epitome of luxury and precision, Rolex watches are symbols of prestige and achievement, crafted with uncompromising attention to detail.</p>
+                        <a href="collection_rolex.html">View Collection →</a>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <img src="access/images/rado.webp" alt="Rado Timepieces">
+                    <div class="brand-info">
+                        <h3>Rado</h3>
+                        <p>Known for innovative design and pioneering materials, Rado creates timepieces that transcend conventional watchmaking with timeless appeal.</p>
+                        <a href="collection_rado.html">View Collection →</a>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <img src="access/images/patek.webp" alt="Patek Philippe Timepieces">
+                    <div class="brand-info">
+                        <h3>Patek Philippe</h3>
+                        <p>The last independent, family-owned Genevan watch manufacturer, creating the world's most exquisite timepieces since 1839.</p>
+                        <a href="collection_patek.html">View Collection →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>Exquisite Timepieces was started as a AP Project by our founders Akshit and Dhruv and is now the leading luxury watches out-sourcer in India.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit Us</h4>
+                    <p>Nagpur</p>
+                    <p>IIIT NAGPUR, Hostel Block-A</p>
+                    <p>Mon-Sat: 10am - 7pm</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>+91 9238544338<br>
+                    +91 7988792818</p>
+                    <p>contact@exquisitetimepieces.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Exquisite Timepieces. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Fade-in animation
+            const fadeElements = document.querySelectorAll('.brand-card, .section-title');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

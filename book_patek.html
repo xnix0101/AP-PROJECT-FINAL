@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details | Exquisite Timepieces</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.6;
+            color: #e4e4e4;
+            background-color: #121212;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(218, 165, 32, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #D4AF37; /* Gold color */
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #e4e4e4;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37; /* Gold color */
+        }
+
+        .page-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            color: #D4AF37; /* Gold color */
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .customer-form {
+            background-color: #1e1e1e;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.1);
+            border: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 400;
+            color: #D4AF37; /* Gold color */
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #D4AF37; /* Gold color */
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background-color: #2d2d2d;
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            color: #e4e4e4;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #D4AF37; /* Gold color */
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #D4AF37; /* Gold color */
+            color: #000;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+            font-weight: 600;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .submit-btn:hover {
+            background-color: #C09226; /* Darker gold */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+        }
+
+        .confirmation {
+            display: none;
+            background-color: #1e1e1e;
+            border-left: 4px solid #D4AF37; /* Gold color */
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.1);
+        }
+
+        .confirmation h2 {
+            color: #D4AF37; /* Gold color */
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-size: 2rem;
+        }
+
+        .confirmation p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .return-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #D4AF37; /* Gold color */
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border-bottom: 1px solid transparent;
+        }
+
+        .return-link:hover {
+            border-bottom: 1px solid #D4AF37; /* Gold color */
+        }
+
+        footer {
+            background-color: #000;
+            color: #e4e4e4;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            position: relative;
+            padding-bottom: 10px;
+            color: #D4AF37; /* Gold color */
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #D4AF37; /* Gold color */
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #D4AF37; /* Gold color */
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #C09226; /* Darker gold */
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(218, 165, 32, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .customer-form {
+                padding: 20px;
+            }
+
+            .form-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">EXQUISITE TIMEPIECES</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Luxury Timepiece Inquiry</h1>
+
+        <div class="customer-form" id="inquiry-form">
+            <h2 class="form-title">Express Your Interest</h2>
+            <form id="customer-details-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="watch-interest">Watch of Interest</label>
+                    <select id="watch-interest" name="watch-interest">
+                        <option value="submariner">Calatrava
+                        </option>
+                        <option value="datejust">Nautilus</option>
+                        <option value="daytona">Aquanaut</option>
+                        <option value="gmt">Annual Calendar</option>
+                        <option value="daydate">Perpetual Calendar Chronograph</option>
+                        <option value="submariner-no-date">Twenty~4 Automatic</option>
+                        <option value="other">Other (Please specify in comments)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="preferred-contact">Preferred Contact Method</label>
+                    <select id="preferred-contact" name="preferred-contact">
+                        <option value="email">Email</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="whatsapp">WhatsApp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="preferred-time">Preferred Time for Contact</label>
+                    <select id="preferred-time" name="preferred-time">
+                        <option value="morning">Morning (9am - 12pm)</option>
+                        <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                        <option value="evening">Evening (5pm - 8pm)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Comments</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+
+        <div class="confirmation" id="confirmation-message">
+            <h2>Thank You for Your Interest!</h2>
+            <p>We have received your inquiry about the luxury timepiece.</p>
+            <p>Our specialist will contact you shortly to discuss details and availability.</p>
+            <a href="collection_patek.html" class="return-link">Return to Collection</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>Exquisite Timepieces was started as a AP Project by our founders Akshit and Dhruv and is now the leading luxury watches out-sourcer in India.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit Us</h4>
+                    <p>Nagpur</p>
+                    <p>IIIT NAGPUR, Hostel Block-A</p>
+                    <p>Mon-Sat: 10am - 7pm</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>+91 9238544338<br>
+                    +91 7988792818</p>
+                    <p>contact@exquisitetimepieces.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Exquisite Timepieces. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters to determine which watch was clicked
+            const urlParams = new URLSearchParams(window.location.search);
+            const watchModel = urlParams.get('model');
+            
+            // Set the default selected watch based on URL parameter
+            if (watchModel) {
+                const watchInterestSelect = document.getElementById('watch-interest');
+                if (watchInterestSelect) {
+                    const option = watchInterestSelect.querySelector(`option[value="${watchModel}"]`);
+                    if (option) {
+                        option.selected = true;
+                    }
+                }
+            }
+            
+            // Form submission handler
+            const form = document.getElementById('customer-details-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                    watchInterest: document.getElementById('watch-interest').value,
+                    preferredContact: document.getElementById('preferred-contact').value,
+                    preferredTime: document.getElementById('preferred-time').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // In a real implementation, you would send this data to your server
+                // For this example, we'll just log it to the console and show the confirmation
+                console.log('Customer inquiry:', formData);
+                
+                // Store data in localStorage (for demonstration purposes)
+                localStorage.setItem('customerInquiry', JSON.stringify(formData));
+                
+                // Hide the form and show the confirmation message
+                document.getElementById('inquiry-form').style.display = 'none';
+                document.getElementById('confirmation-message').style.display = 'block';
+                
+                // Scroll to confirmation message
+                document.getElementById('confirmation-message').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

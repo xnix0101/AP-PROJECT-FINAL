@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patek Philippe Collection | Exquisite Timepieces</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="access/style.css">
+    <style>
+        /* Additional styles specific to collection page */
+        .collection-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('access/images/patek-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+
+        .collection-banner h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .collection-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .watch-card {
+            background-color: #fce5cd;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .watch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .watch-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .watch-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .watch-card:hover .watch-image img {
+            transform: scale(1.05);
+        }
+
+        .watch-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .watch-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 400;
+            color: #7B3F00;
+        }
+
+        .watch-info .price {
+            color: #8B7D65;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .watch-info p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .details-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .details-btn:hover {
+            background-color: #8B7D65;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .collection-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .collection-banner h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">EXQUISITE TIMEPIECES</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="collection-banner" id="patekphilippe">
+        <div class="container">
+            <h1>PATEK PHILIPPE COLLECTION</h1>
+            <p>Discover our selection of Patek Philippe masterpieces, representing the pinnacle of Swiss watchmaking excellence since 1839.</p>
+        </div>
+    </section>
+
+    <section class="collection">
+        <div class="container">
+            <div class="collection-grid">
+                <div class="watch-card">
+                    <div class="watch-image">
+                        <img src="access/images/patek-calatrava.jpg" alt="Patek Philippe Calatrava">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Calatrava</h3>
+                        
+                        <p>The definitive round dress watch with understated elegance. A timeless design featuring a sleek bezel and minimalist dial.</p>
+                        <a href="book_patek.html" class="details-btn">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="watch-card">
+                    <div class="watch-image">
+                        <img src="access/images/patek-nautilus.jpg" alt="Patek Philippe Nautilus">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Nautilus</h3>
+                        <p>Inspired by maritime portholes, this luxury sports watch features the distinctive octagonal-shaped bezel and horizontal embossed dial.</p>
+                        <a href="book_patek.html" class="details-btn">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="watch-card">
+                    <div class="watch-image">
+                        <img src="access/images/patek-aquanaut.jpg" alt="Patek Philippe Aquanaut">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Aquanaut</h3>
+                        <p>A contemporary sports watch with a distinctive rounded octagonal case and embossed dial pattern paired with a composite strap.</p>
+                        <a href="book_patek.html" class="details-btn">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="watch-card">
+                    <div class="watch-image">
+                        <img src="access/images/patek-complications.jpg" alt="Patek Philippe Complications">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Annual Calendar</h3>
+                        <p>Sophisticated timepiece displaying day, date, month, and moon phases, requiring adjustment only once per year at the end of February.</p>
+                        <a href="book_patek.html" class="details-btn">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="watch-card">
+                    <div class="watch-image">
+                        <img src="access/images/patek-grandcomplications.jpg" alt="Patek Philippe Grand Complications">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Perpetual Calendar Chronograph</h3>
+                        <p>The ultimate expression of horological mastery combining perpetual calendar, chronograph, and moon phase in a single magnificent timepiece.</p>
+                        <a href="book_patek.html" class="details-btn">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="watch-card">
+                    <div class="watch-image">
+                        <img src="access/images/patek-twenty4.jpg" alt="Patek Philippe Twenty~4">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Twenty~4 Automatic</h3>
+                        <p>Elegant ladies' timepiece reimagined with a round case, automatic movement, and diamond hour markers for everyday sophistication.</p>
+                        <a href="book_patek.html" class="details-btn">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-patek">
+        <div class="container">
+            <h2 class="section-title">The Heritage of Patek Philippe</h2>
+            <div class="about-content">
+                <p>Founded in 1839, Patek Philippe stands as the last independent, family-owned Genevan watch manufacturer. For over 180 years, the company has perpetuated the traditions of Geneva's fine watchmaking art, passing down exceptional expertise from generation to generation.</p>
+                <p>The company's grand complications are among the most sophisticated mechanisms in the world, with perpetual calendars, minute repeaters, and split-seconds chronographs representing the pinnacle of the watchmaker's art. Each timepiece is hand-finished to exacting standards that have become synonymous with the Patek Philippe name.</p>
+                <p>The Stern family, owners of Patek Philippe since 1932, uphold the company's commitment to excellence with their famous philosophy: "You never actually own a Patek Philippe. You merely look after it for the next generation." This sentiment reflects the enduring value and timeless quality of these extraordinary timepieces.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>Exquisite Timepieces was started as a AP Project by our founders Akshit and Dhruv and is now the leading luxury watches out-sourcer in India.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit Us</h4>
+                    <p>Nagpur</p>
+                    <p>IIIT NAGPUR, Hostel Block-A</p>
+                    <p>Mon-Sat: 10am - 7pm</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>+91 9238544338<br>
+                    +91 7988792818</p>
+                    <p>contact@exquisitetimepieces.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Exquisite Timepieces. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade-in animation
+            const fadeElements = document.querySelectorAll('.watch-card, .section-title');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Back to top functionality
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
